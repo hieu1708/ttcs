@@ -1,0 +1,54 @@
+{
+  "providers": [
+    {
+      "name": "Qwen",
+      "type": "ollama",
+      "model": "qwen2.5-coder:14b",
+      "base_url": "Chạy lệnh [ngrok http 11434] trên máy local để lấy base",
+      "api_key": "",
+      "rpm": 0.0,
+      "think": "off"
+    },
+    {
+      "name": "Gemini",
+      "type": "openai",
+      "model": "gemini-3.5-flash",
+      "base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
+      "api_key": "AQ.Ab8RN6In3Qsj2rtwAItmg_TMVfJzjwQeWB4jgpV8BevMJB4azw",
+      "rpm": 0.0,
+      "think": "off"
+    },
+    {
+      "name": "Deepseek",
+      "type": "openai",
+      "model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+      "base_url": "https://integrate.api.nvidia.com/v1",
+      "api_key": "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",
+      "rpm": 0.0,
+      "think": "off"
+    },
+    {
+      "name": "Nvidia",
+      "type": "openai",
+      "model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+      "base_url": "https://integrate.api.nvidia.com/v1",
+      "api_key": "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",
+      "rpm": 0.0,
+      "think": "off"
+    }
+  ],
+  "embedding": {
+    "backend": "tfidf",
+    "model": "nomic-embed-text",
+    "base_url": "http://localhost:11434",
+    "api_key": ""
+  },
+  "rag": {
+    "top_k": 3,
+    "graph_sim_threshold": 0.8
+  },
+  "prompts": {
+    "user": "You are a patient and precise programming tutor.\nTask: solve the user's exercise in {language}.\n\n{context}\n\nInstructions:\n1. Prefer the approach, naming style and structure of the reference solutions when they are relevant; do not copy blindly if the problem is different.\n2. Write all explanations in {answer_language}.\n3. Give a short explanation of the idea, then ONE complete, runnable {language} solution inside a single ```{fence} code block.\n4. If the references do not cover the problem, solve it from first principles and say so briefly.\n\nUser question:\n{question}\n",
+    "eval": "You are an expert competitive programmer.\nWrite a complete {language} program that solves the problem below.\nThe program must read ALL input from standard input and print the result to standard output, exactly in the required format, with no extra text or prompts.\n\n{context}\n\nOutput ONLY one ```{fence} code block. No explanation.\n\nProblem:\n{question}\n"
+  }
+}
