@@ -1,22 +1,12 @@
----
-title: Code RAG Assistant
-emoji: 🤖
-sdk: docker
-app_port: 8501
----
 # Code RAG Assistant – Hệ thống truy vấn sinh mã nguồn hỗ trợ (RAG / GraphRAG)
 
 ## Cài đặt & chạy
 ```bash
 pip install -r requirements.txt
-# Cần trình biên dịch cho các ngôn ngữ muốn chấm: g++ (C++), gcc (C), JDK (Java, cần cả javac)
-# Ubuntu: sudo apt install g++ gcc default-jdk-headless   |   Windows: MinGW-w64/MSYS2 + JDK
-ollama pull qwen3.5:4b            # nếu dùng LLM cục bộ
+ollama pull qwen2.5-coder:14b            # nếu dùng LLM cục bộ
 set ADMIN_PASSWORD=matkhau_cua_ban   # Linux/macOS: export ADMIN_PASSWORD=...
 streamlit run app.py
 ```
-Lần đầu: vào **Quản trị → Bài tập mẫu → Nhập file JSON** và chọn `data/exercises_50.json` (**50 bài**, mỗi bài có đáp án Python + C++ và test case; đáp án đã được chạy kiểm chứng cả hai ngôn ngữ). Muốn RAG có lời giải C/Java, hãy bổ sung `solutions.c` / `solutions.java` (JSON) hoặc `SOLUTION_C` / `SOLUTION_JAVA` (file mẫu) — nếu thiếu, hệ thống dùng lời giải C++/Python làm tham chiếu. `data/sample_exercises.json` là bản rút gọn 10 bài để thử nhanh.
-Mật khẩu admin mặc định là `admin` – hãy đổi.
 
 ## Cấu trúc
 ```
