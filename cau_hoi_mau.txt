@@ -1,0 +1,20 @@
+Bài 1: Tổng hai số
+Đọc hai số nguyên a và b trên cùng một dòng, in ra a + b.
+Input:
+3 5
+Output:
+8
+
+Bài 2: Số nguyên tố
+Đọc số nguyên n, in YES nếu n là số nguyên tố, ngược lại in NO.
+Input:
+97
+Output:
+YES
+
+Bài 3: Đảo ngược chuỗi
+Đọc một chuỗi không chứa khoảng trắng và in ra chuỗi đảo ngược.
+Input:
+hello
+Output:
+olleh
